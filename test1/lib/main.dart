@@ -19,6 +19,7 @@ class _MyWidgetState extends State<MyApp> {
   String year = 'YYYY';
   String month = 'MM';
   bool boolCvv = false;
+  String CVV = '';
 
   void updateCardNumber(String newNumber) {
     setState(() {
@@ -61,7 +62,8 @@ class _MyWidgetState extends State<MyApp> {
                       (valueMonth) => setState(() => month = valueMonth),
                       (valueYear) => setState(() => year = valueYear),
                       updateCardNumber,
-                      (valueCvv) => setState(() => boolCvv = valueCvv))),
+                      (valueCvv) => setState(() => boolCvv = valueCvv),
+                      (currentCvv) => setState(() => CVV = currentCvv))),
               Positioned(
                 top: 30,
                 child: FlipCard(
@@ -70,6 +72,7 @@ class _MyWidgetState extends State<MyApp> {
                   month,
                   year,
                   boolCvv,
+                  CVV,
                 ),
               ),
             ],
@@ -85,6 +88,7 @@ class MyDropdownButton extends StatefulWidget {
   final Function(String valueMonth) monthChange;
   final Function(String) cardNumberUpdate;
   final Function(bool) onCvvSelected;
+  final Function(String) CVV;
 
   const MyDropdownButton(
       this.cardNumberChange,
@@ -93,6 +97,7 @@ class MyDropdownButton extends StatefulWidget {
       this.yearChange,
       this.cardNumberUpdate,
       this.onCvvSelected,
+      this.CVV,
       {super.key});
   @override
   _MyDropdownButtonState createState() => _MyDropdownButtonState();
@@ -107,6 +112,7 @@ class _MyDropdownButtonState extends State<MyDropdownButton>
   String cardType = 'visa';
   String expirationYear = '2024';
   String expirationMonth = '01';
+  String CVV = '';
 
   _MyDropdownButtonState() {
     cvvFocus.addListener(onCvvSelected);
@@ -258,6 +264,9 @@ class _MyDropdownButtonState extends State<MyDropdownButton>
                           width: 100,
                           height: 50,
                           child: TextField(
+                            onChanged: (value) {
+                              widget.CVV(value);
+                            },
                             focusNode: cvvFocus,
                             controller: cvvController,
                             keyboardType: TextInputType.number,
@@ -340,35 +349,6 @@ class _DropDownState extends State<Dropdown> {
   }
 }
 
-class NumeroCarte extends StatefulWidget {
-  final TextEditingController controller;
-  const NumeroCarte({super.key, required this.controller});
-
-  @override
-  State<NumeroCarte> createState() => FormatInputNumeroCarte();
-}
-
-class FormatInputNumeroCarte extends State<NumeroCarte> {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: TextField(
-        controller: widget.controller,
-        keyboardType: TextInputType.number,
-        inputFormatters: [
-          LengthLimitingTextInputFormatter(19),
-          FilteringTextInputFormatter.digitsOnly,
-          FonctionFormatInputNumeroCarte(),
-        ],
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
-          labelText: 'Card Number',
-        ),
-      ),
-    );
-  }
-}
-
 class FonctionFormatInputNumeroCarte extends TextInputFormatter {
   @override
   TextEditingValue formatEditUpdate(
@@ -445,8 +425,9 @@ class FlipCard extends StatefulWidget {
   final String year;
   final String month;
   final bool boolCvv;
-  const FlipCard(
-      this.cardNumber, this.cardName, this.year, this.month, this.boolCvv,
+  final String CVV;
+  const FlipCard(this.cardNumber, this.cardName, this.year, this.month,
+      this.boolCvv, this.CVV,
       {super.key});
 
   @override
@@ -511,7 +492,7 @@ class _FlipCardState extends State<FlipCard>
                       ClipRRect(
                         borderRadius: BorderRadius.circular(12.0),
                         child: Image.asset(
-                          'assets/FondCarteAbdou.jpeg',
+                          'assets/7.jpeg',
                           width: 250,
                           height: 160,
                         ),
@@ -583,20 +564,51 @@ class _FlipCardState extends State<FlipCard>
                           ))
                     ],
                   )
-                : Stack(
-                    clipBehavior: Clip.none,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12.0),
-                        child: Image.asset(
-                          'assets/FondCarteAbdou.jpeg',
-                          width: 250,
-                          height: 160,
-                        ),
+                : Stack(clipBehavior: Clip.none, children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12.0),
+                      child: Image.asset(
+                        'assets/7.jpeg',
+                        width: 250,
+                        height: 160,
                       ),
-                      const Positioned(child: Text('CVC'))
-                    ],
-                  ));
+                    ),
+                    Positioned(
+                        top: 20,
+                        child: Container(
+                          width: 250,
+                          height: 25,
+                          color: Colors.black,
+                        )),
+                    Positioned(
+                        top: 50,
+                        right: 16,
+                        child: Text(
+                          'Cvv',
+                          style: TextStyle(color: Colors.white),
+                        )),
+                    Positioned.fill(
+                      child: Align(
+                          alignment: Alignment.center,
+                          child: Container(
+                            width: 230,
+                            height: 20,
+                            color: Colors.white,
+                            child: Text(
+                              widget.CVV,
+                              textAlign: TextAlign.right,
+                            ),
+                          )),
+                    ),
+                    Positioned(
+                        right: 16,
+                        bottom: 2,
+                        child: Image.asset(
+                          'assets/${getCardType(widget.cardNumber)}.png',
+                          width: 50,
+                          height: 50,
+                        )),
+                  ]));
       },
     );
   }
