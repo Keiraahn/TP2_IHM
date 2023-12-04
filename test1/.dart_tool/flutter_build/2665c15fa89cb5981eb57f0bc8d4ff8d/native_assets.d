@@ -1,0 +1,1 @@
+ C:\\Users\\dobal\\Documents\\TP_IHM_Flutter\\TP2_flutter\\test1\\.dart_tool\\flutter_build\\2665c15fa89cb5981eb57f0bc8d4ff8d\\native_assets.yaml: 

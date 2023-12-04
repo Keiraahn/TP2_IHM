@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\build\windows\x64\CMakeFiles\e9bb31a8e47b4be08437534a2d58c09a\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{262C2139-933A-3A44-A1D5-F672D831069A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

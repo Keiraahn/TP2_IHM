@@ -1,0 +1,4 @@
+#Thu Nov 30 10:38:28 CET 2023
+base.0=C\:\\Users\\dobal\\Documents\\TP_IHM_Flutter\\TP2_flutter\\tp2_flutter\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

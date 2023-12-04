@@ -1,0 +1,12 @@
+com.example.tp2_flutter.app-jetified-annotation-experimental-1.1.0-0 C:\Users\dobal\.gradle\caches\transforms-3\02315cc9f75263553d2042718fc375ee\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.tp2_flutter.app-jetified-window-1.0.0-beta04-1 C:\Users\dobal\.gradle\caches\transforms-3\076eb9235982ee06112d76594ea8585f\transformed\jetified-window-1.0.0-beta04\res
+com.example.tp2_flutter.app-jetified-window-java-1.0.0-beta04-2 C:\Users\dobal\.gradle\caches\transforms-3\99750bb863b6fe460a7b5da8686e778d\transformed\jetified-window-java-1.0.0-beta04\res
+com.example.tp2_flutter.app-core-1.6.0-3 C:\Users\dobal\.gradle\caches\transforms-3\d08c73bfb05384f2e52578171dbd141e\transformed\core-1.6.0\res
+com.example.tp2_flutter.app-debug-4 C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\android\app\src\debug\res
+com.example.tp2_flutter.app-main-5 C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\android\app\src\main\res
+com.example.tp2_flutter.app-pngs-6 C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\build\app\generated\res\pngs\debug
+com.example.tp2_flutter.app-resValues-7 C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\build\app\generated\res\resValues\debug
+com.example.tp2_flutter.app-rs-8 C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\build\app\generated\res\rs\debug
+com.example.tp2_flutter.app-mergeDebugResources-9 C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
+com.example.tp2_flutter.app-mergeDebugResources-10 C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
+com.example.tp2_flutter.app-merged_res-11 C:\Users\dobal\Documents\TP_IHM_Flutter\TP2_flutter\tp2_flutter\build\app\intermediates\merged_res\debug
